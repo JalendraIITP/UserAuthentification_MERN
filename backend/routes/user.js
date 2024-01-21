@@ -3,8 +3,6 @@ import bcrypt from 'bcrypt';
 
 import jwt from 'jsonwebtoken';
 
-import fs from 'fs';
-
 import { config } from 'dotenv'
 config({
     path: "data/config.env"
@@ -35,7 +33,8 @@ const signup = (async (req, res) => {
         path: '/',
         expires: new Date(Date.now() + 1000 * 50),
         httpOnly: true,
-        sameSite: 'lax'
+        sameSite: 'none',
+        secure: true
     });
     res.status(200).json({ message: "Successfully SignUp", user: user });
 });
@@ -67,7 +66,8 @@ const login = (async (req, res) => {
         path: '/',
         expires: new Date(Date.now() + 1000 * 50),
         httpOnly: true,
-        sameSite: 'lax'
+        sameSite: 'none',
+        secure: true
     });
     delete existingUser.password;
     return res.status(200).json({ message: "Successfully LogedIn", user: existingUser });
@@ -118,7 +118,8 @@ const refreshToken = async (req, res, next) => {
             path: '/',
             expires: new Date(Date.now() + 1000 * 50),
             httpOnly: true,
-            sameSite: 'lax'
+            sameSite: 'none',
+            secure: true
         });
         req.id = user.id;
     });
