@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: #4d4d4d;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.nav>.nav-header {
+    display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 9px;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav-links {
+    float: right;
+    display: flex;
+    font-size: 18px;
+}
+
+.nav-links>a,
+Link {
+    padding: 12px 15px 11.5px 9px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before,
+.tooltip::after {
+    position: absolute;
+    visibility: hidden;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+    visibility: visible;
+}
+
+.tooltip::before {
+    content: attr(data-tooltip);
+    color: #efefef;
+    font-size: 18px;
+    background: #4d4d4d;
+    padding: 5px;
+}
+
+.tooltip--left::before,
+.tooltip--left::after {
+    top: 35%;
+    right: 100%;
+    transform: translate(0, -50%);
+    margin-right: 14px;
+}
+
+.nav-links>a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav-links Link:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+    display: none;
+}

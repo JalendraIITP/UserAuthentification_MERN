@@ -1,0 +1,16 @@
+.div1 {
+    margin-top: 52px;
+    height: 55px;
+    font-family: arial;
+    text-align: center;
+    font-size: 2em;
+    width: 100%;
+    top: 0;
+    background-color: #1d2d50;
+    margin-bottom: 10px;
+}
+
+.div1>p {
+    padding: 9px;
+    color: #fcdab7;
+}

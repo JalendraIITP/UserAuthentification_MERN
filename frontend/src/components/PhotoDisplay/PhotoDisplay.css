@@ -1,0 +1,92 @@
+.gallery1 {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 10px;
+    margin-left: 1%;
+    width: 214vh;
+    min-height: 290px;
+}
+
+.gallery1 img {
+    width: 365px;
+    height: auto;
+    margin-top: 9px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.image-item img:hover {
+    overflow: hidden;
+    transition: 0.6s;
+    box-shadow: 0 0 20px 10px #889aa3;
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-image {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 30px;
+    width: 100%;
+    height: 100%;
+    background: rgba(196, 191, 229, 0.7);
+    backdrop-filter: blur(60px);
+}
+
+.modal-content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.modal-image {
+    width: auto;
+    height: 80vh;
+    max-width: 1500px;
+    cursor: pointer;
+}
+
+.controls {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.controls>button {
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: centre;
+    height: 40px;
+    border: solid #dc3545 1.5px;
+    color: #dc3545;
+    background-color: #9098bc;
+}
+
+.controls button:hover {
+    background-color: #dc3545;
+    color: white;
+
+    .icons {
+        color: white;
+    }
+}

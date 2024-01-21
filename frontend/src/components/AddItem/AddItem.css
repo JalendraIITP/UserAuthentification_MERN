@@ -1,0 +1,52 @@
+.hero {
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#drop-area {
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 15px;
+    margin-left: 38%;
+    margin-right: 38%;
+}
+
+.img-view {
+    border-radius: 15px;
+    border: 3px dashed #bbb5ff;
+    background: #f7f8ff;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    object-fit: contain;
+}
+
+.img-view img {
+    border-radius: 15px;
+}
+
+.upload>button {
+    border-radius: 8px;
+    cursor: pointer;
+    height: 40px;
+    width: 88px;
+    border: solid black 1.5px;
+    color: white;
+    background-color: #157347;
+}
+
+button:hover {
+    background-color: #178c55;
+    color: white;
+}
