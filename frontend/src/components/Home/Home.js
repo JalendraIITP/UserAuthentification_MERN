@@ -18,7 +18,7 @@ const Home = () => {
     const { user, setUser } = useContext(UseContext);
     const sendRequest = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/getuser', {
+            const res = await axios.get('https://backend-whux.onrender.com/getuser', {
                 withCredentials: true,
             });
 
@@ -35,7 +35,7 @@ const Home = () => {
 
     const refreshToken = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/refresh', {
+            const res = await axios.get('https://backend-whux.onrender.com/refresh', {
                 withCredentials: true,
             });
 

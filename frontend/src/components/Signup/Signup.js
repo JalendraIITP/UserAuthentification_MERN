@@ -39,7 +39,7 @@ const Signup = () => {
         e.preventDefault();
         const newUser = { ...user };
         try {
-            const res = await axios.post('https://backend-gfyd.onrender.com/signup', newUser);
+            const res = await axios.post('https://backend-whux.onrender.com/signup', newUser);
             if (res.status > 200) {
                 showToastMessageW(res.data.message);
             } else {

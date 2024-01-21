@@ -39,7 +39,7 @@ const PhotoDisplay = () => {
 
     const handleDelete = async (imageId) => {
         try {
-            const res = await axios.post('http://localhost:4000/deleteimage', { imageId });
+            const res = await axios.post('https://backend-whux.onrender.com/deleteimage', { imageId });
             if (res.status === 400) {
                 console.log(res.data.message);
             } else {

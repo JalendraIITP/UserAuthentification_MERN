@@ -38,7 +38,7 @@ const Login = () => {
         e.preventDefault();
         const newUser = { ...user };
         try {
-            const res = await axios.post('http://localhost:4000/login', newUser);
+            const res = await axios.post('https://backend-whux.onrender.com/login', newUser);
             if (res.status === 200) {
                 showToastMessage(res.data.message);
                 dispatch(authActions.login());

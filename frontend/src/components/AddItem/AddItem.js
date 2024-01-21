@@ -51,7 +51,7 @@ const AddItem = () => {
             setLoading("Loading");
             const formData = new FormData();
             formData.append('myFile', myfile);
-            const res = await axios.post('https://backend-gfyd.onrender.com/addimage', formData, {
+            const res = await axios.post('https://backend-whux.onrender.com/addimage', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

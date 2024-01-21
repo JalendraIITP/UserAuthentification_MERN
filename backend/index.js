@@ -24,7 +24,6 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(cookieParser());
-
 app.post('/login', login);
 app.post('/signup', signup);
 app.get('/getuser', verifyToken, getUser);
