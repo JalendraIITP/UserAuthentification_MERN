@@ -5,11 +5,10 @@ import './AddItem.css'
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import UseContext from '../../Context/UseContext';
-
-let upload = icon;
 axios.defaults.withCredentials = true;
-
+let upload = icon;
 const AddItem = () => {
+    const [loading, setLoading] = useState();
     const [myfile, setmyFile] = useState();
     const { setUser } = useContext(UseContext);
 
@@ -49,6 +48,7 @@ const AddItem = () => {
                 showToastMessageE("You have not Selected the Image!");
                 return;
             }
+            setLoading("Loading");
             const formData = new FormData();
             formData.append('myFile', myfile);
             const res = await axios.post('http://localhost:4000/addimage', formData, {
@@ -56,6 +56,7 @@ const AddItem = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+            setLoading(null);
             if (res.status === 200) {
                 setUser(res.data.user);
                 showToastMessage("File uploaded successfully !");
@@ -66,6 +67,7 @@ const AddItem = () => {
                 console.error('Failed to upload file');
             }
         } catch (error) {
+            setLoading(null);
             console.error('Error in uploading file: ', error);
             showToastMessageE("Error in uploading file !");
         }
@@ -103,6 +105,9 @@ const AddItem = () => {
                         </svg>
                         Upload
                     </button>
+                    {loading && <div className="loader-wrapper">
+                        <div className="loader"></div>
+                    </div>}
                 </div>
             </div>
             <ToastContainer />

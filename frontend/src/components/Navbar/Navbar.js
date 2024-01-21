@@ -47,7 +47,7 @@ const Navbar = () => {
                 <input type="checkbox" id="nav-check" />
                 <div className="nav-header">
                     <div className="nav-title">
-                        Photos
+                        PHOTOS
                     </div>
                 </div>
                 <div className="nav-btn">

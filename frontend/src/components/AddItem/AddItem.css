@@ -36,6 +36,14 @@
     border-radius: 15px;
 }
 
+.upload {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
 .upload>button {
     border-radius: 8px;
     cursor: pointer;
@@ -49,4 +57,70 @@
 button:hover {
     background-color: #178c55;
     color: white;
+}
+
+.loader-wrapper {
+    position: absolute;
+    z-index: 1;
+}
+
+
+.loader {
+    display: block;
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    margin: -45px 0 0 -44.5px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    border-top-color: #16a085;
+    animation: spin 1s linear infinite;
+    z-index: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #e74c3c;
+        animation: spin-reverse .8s linear infinite;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #f9c922;
+        animation: spin 0.5s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
 }
