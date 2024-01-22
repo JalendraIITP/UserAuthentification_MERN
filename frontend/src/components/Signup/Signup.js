@@ -41,7 +41,7 @@ const Signup = () => {
         const newUser = { ...user };
         try {
             setLoading("Loading");
-            const res = await axios.post('http://localhost:4000/signup', newUser);
+            const res = await axios.post('https://backend-gaqp.onrender.com/signup', newUser);
             if (res.status > 200) {
                 showToastMessageW(res.data.message);
                 setLoading(null);
