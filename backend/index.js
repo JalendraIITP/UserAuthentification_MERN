@@ -28,6 +28,9 @@ app.use(cors({
     credentials:true
 }));
 app.use(cookieParser());
+app.get('/', async (req, res) => {
+    res.send("Your API is Connected");
+});
 app.post('/login', login);
 app.post('/signup', signup);
 app.get('/getuser', verifyToken, getUser);
