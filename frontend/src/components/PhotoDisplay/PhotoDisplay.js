@@ -41,7 +41,7 @@ const PhotoDisplay = () => {
     const handleDelete = async (imageId) => {
         try {
             setLoading("Loading");
-            const res = await axios.post('http://localhost:4000/deleteimage', { imageId });
+            const res = await axios.post('https://backend-gaqp.onrender.com/deleteimage', { imageId });
             if (res.status === 400) {
                 setLoading(null);
                 console.log(res.data.message);
