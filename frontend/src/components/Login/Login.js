@@ -40,7 +40,7 @@ const Login = () => {
         const newUser = { ...user };
         try {
             setLoading("Loading");
-            const res = await axios.post('http://localhost:4000/login', newUser);
+            const res = await axios.post('https://backend-gaqp.onrender.com/login', newUser);
             if (res.status === 200) {
                 showToastMessage(res.data.message);
                 dispatch(authActions.login());
