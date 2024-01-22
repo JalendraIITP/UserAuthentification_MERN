@@ -22,7 +22,7 @@ const upload = multer({
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "*" }));
 app.use(cookieParser());
 app.post('/login', login);
 app.post('/signup', signup);
