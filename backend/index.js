@@ -23,7 +23,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors({
-    origin:"https://deploy-mern-lwhq.versel.app"],
+    origin:"*"],
     method:["POST","GET"],
     credentials:true
 }));
