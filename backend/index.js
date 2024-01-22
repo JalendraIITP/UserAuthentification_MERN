@@ -22,7 +22,11 @@ const upload = multer({
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors({ credentials: true, origin: "*" }));
+app.use(cors({
+    origin:"https://deploy-mern-lwhq.versel.app"],
+    method:["POST","GET"],
+    credentials:true
+}));
 app.use(cookieParser());
 app.post('/login', login);
 app.post('/signup', signup);
