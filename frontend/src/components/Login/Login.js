@@ -11,6 +11,7 @@ const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { setUser } = useContext(UseContext);
+    const [loading, setLoading] = useState();
     const [user, setuser] = useState({
         email: "", password: ""
     });
@@ -38,7 +39,8 @@ const Login = () => {
         e.preventDefault();
         const newUser = { ...user };
         try {
-            const res = await axios.post('https://backend-whux.onrender.com/login', newUser);
+            setLoading("Loading");
+            const res = await axios.post('http://localhost:4000/login', newUser);
             if (res.status === 200) {
                 showToastMessage(res.data.message);
                 dispatch(authActions.login());
@@ -47,7 +49,9 @@ const Login = () => {
             } else {
                 showToastMessageW(res.data.message);
             }
+            setLoading(null);
         } catch (error) {
+            setLoading(null);
             showToastMessageE("Error during fetching !");
             console.error('Error during fetching :', error);
         }
@@ -55,17 +59,20 @@ const Login = () => {
 
     return (
         <>
-            <div className='adv'>
+            <div className='ladv'>
                 <p>Login to Image Gallery</p>
             </div>
-            <div className="login-page">
-                <div className="form">
-                    <form className="login-form" onSubmit={PostData} method="post">
+            <div className="llogin-page">
+                <div className="lform">
+                    <form className="llogin-form" onSubmit={PostData} method="post">
                         <input onChange={(e) => handle(e)} type="email" id="email" value={user.email} placeholder='Email' />
                         <input onChange={(e) => handle(e)} type="password" id="password" value={user.password} placeholder='Password' />
                         <button type="submit" onSubmit={PostData}>LogIn</button>
                         <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
                     </form>
+                    {loading && <div className="lloader-wrapper">
+                        <div className="lloader"></div>
+                    </div>}
                 </div>
             </div>
             <ToastContainer />

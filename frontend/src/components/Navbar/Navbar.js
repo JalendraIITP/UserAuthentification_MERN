@@ -20,7 +20,7 @@ const Navbar = () => {
     };
 
     const sendLogout = async () => {
-        const res = await axios.post('https://backend-whux.onrender.com/logout', null, {
+        const res = await axios.post('http://localhost:4000/logout', null, {
             withCredentials: true
         });
         if (res.status === 200) {

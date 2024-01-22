@@ -28,7 +28,7 @@ const signup = (async (req, res) => {
     } catch (err) {
         console.log(err);
     }
-    const token = jwt.sign({ id: user._id }, process.env.JWT, { expiresIn: "60s" });
+    const token = jwt.sign({ id: user._id }, process.env.JWT, { expiresIn: "70s" });
     res.cookie(String(user._id), token, {
         path: '/',
         expires: new Date(Date.now() + 1000 * 50),
@@ -61,7 +61,7 @@ const login = (async (req, res) => {
         res.cookie(`${existingUser._id}`, "", { maxAge: 0 });
     }
 
-    const token = jwt.sign({ id: existingUser._id }, process.env.JWT, { expiresIn: "60s" });
+    const token = jwt.sign({ id: existingUser._id }, process.env.JWT, { expiresIn: "70s" });
     res.cookie(String(existingUser._id), token, {
         path: '/',
         expires: new Date(Date.now() + 1000 * 50),
@@ -113,7 +113,7 @@ const refreshToken = async (req, res, next) => {
         res.clearCookie(`${user.id}`);
         req.cookies[`${user.id}`] = "";
 
-        const token = jwt.sign({ id: user.id }, process.env.JWT, { expiresIn: "60s" });
+        const token = jwt.sign({ id: user.id }, process.env.JWT, { expiresIn: "70s" });
         res.cookie(String(user.id), token, {
             path: '/',
             expires: new Date(Date.now() + 1000 * 50),
