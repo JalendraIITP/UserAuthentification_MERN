@@ -59,8 +59,8 @@ const Navbar = () => {
                 </div>
 
                 <div className="nav-links">
-                    {!isLoggedIn && <a href="/signup">Signup</a>}
-                    {!isLoggedIn && <a href="/login">Login</a>}
+                    {!isLoggedIn && <Link to="/signup">Signup</Link>}
+                    {!isLoggedIn && <Link to="/login">Login</Link>}
                     {isLoggedIn && user && (
                         <>
                             <Link to={`/user/${user.name}`}>
@@ -72,7 +72,7 @@ const Navbar = () => {
                             </Link>
                         </>
                     )}
-                    {isLoggedIn && <Link onClick={handleLogout} href="/">Logout</Link>}
+                    {isLoggedIn && <Link onClick={handleLogout} to="/">Logout</Link>}
                     <Link to="/">Home</Link>
                 </div>
             </div>
