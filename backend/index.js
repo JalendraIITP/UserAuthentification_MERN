@@ -22,12 +22,6 @@ const upload = multer({
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors({
-    origin: ["http://localhost:3000"],
-    method: ["POST", "GET"],
-    credentials: true
-}));
-
 
 import http from 'http';
 import { Server as SocketIoServer } from 'socket.io';
