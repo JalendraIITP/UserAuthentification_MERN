@@ -22,17 +22,11 @@ const upload = multer({
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
-
-import http from 'http';
-import { Server as SocketIoServer } from 'socket.io';
-const httpServer = http.createServer(app);
-const socketIo = new SocketIoServer(httpServer, {
+app.use(cors({
     origin: ["https://imagegallery-uln5.onrender.com"],
     method: ["POST", "GET"],
     credentials: true
-});
-
-
+}));
 app.use(cookieParser());
 app.get('/', async (req, res) => {
     res.send("Your API is Connected");
@@ -44,8 +38,4 @@ app.get('/refresh', refreshToken, verifyToken, getUser);
 app.post('/logout', verifyToken, logout);
 app.post('/deleteimage', deleteImages);
 app.post('/addimage', upload.single('myFile'), verifyToken, addImages);
-app.listen(process.env.PORT, () => {
-    socketIo.on('connection', () => {
-        console.log("server.Io is Connected");
-    })
-});
+app.listen(process.env.PORT);
