@@ -12,8 +12,9 @@ const Advertisement = () => {
     return (
         <>
             <div className='adv1'>
-                {user && <p>Welcome to Image Gallery</p>}
-                {!user && <Link to={`/user/${user.name}`}><p>{user.name}</p><Link/>}
+                <p>Welcome to Image Gallery</p>
+                //{user && <p>Welcome to Image Gallery</p>}
+                //{!user && <Link to={`/user/${user.name}`}><p>{user.name}</p><Link/>}
             </div>
             <div className="gallery">
                 <img src={im1} alt="Two hands creating a heart and showing the sun" />
