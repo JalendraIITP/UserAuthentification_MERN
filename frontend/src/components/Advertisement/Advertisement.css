@@ -17,29 +17,6 @@
     transform: translate(-50%, -50%);
 }
 
-.adv1 button {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    align-items: centre;
-    height: 30px;
-    width: 40px;
-    border: solid #f8f8f8 1.5px;
-    color: #f8f8f8;
-    background-color: #1d2d50;
-}
-
-.adv1 button:hover {
-    background-color: #b7bfc6;
-    color: black;
-
-    .icons {
-        color: #b7bfc6;
-    }
-}
-
 @keyframes example {
     0% {
         width: 830px;
