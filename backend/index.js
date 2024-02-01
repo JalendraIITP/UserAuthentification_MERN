@@ -34,7 +34,7 @@ wss.on('connection', (ws) => {
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ["http://localhost:3456"],
+    origin: ["https://imagegallery-uln5.onrender.com"],
     method: ["POST", "GET"],
     credentials: true
 }));
