@@ -1,20 +1,18 @@
-import express from 'express';
-import cors from 'cors';
-import http from 'http';
-import { WebSocketServer } from "ws";
-import { signup, login, verifyToken, getUser, refreshToken, logout, deleteImages, addImages } from './routes/user.js';
+import express from 'express'
+import cors from 'cors'
+import { signup, login, verifyToken, getUser, refreshToken, logout, deleteImages, addImages } from './routes/user.js'
 import { connectDB } from './data/database.js';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import { config } from 'dotenv';
 
+import { config } from 'dotenv'
 config({
     path: "data/config.env"
 });
 
 connectDB();
 
-import multer from 'multer';
+import multer from 'multer'
 const upload = multer({
     limits: {
         fieldSize: 18 * 1024 * 1024,
@@ -22,15 +20,6 @@ const upload = multer({
 });
 
 const app = express();
-const server = http.createServer(app);
-
-const wss = new WebSocketServer({ server });
-
-wss.on('connection', (ws) => {
-    ws.on('message', (message) => { });
-    ws.on('close', () => { });
-});
-
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors({
@@ -49,5 +38,4 @@ app.get('/refresh', refreshToken, verifyToken, getUser);
 app.post('/logout', verifyToken, logout);
 app.post('/deleteimage', deleteImages);
 app.post('/addimage', upload.single('myFile'), verifyToken, addImages);
-
-server.listen(process.env.PORT);
+app.listen(process.env.PORT);
