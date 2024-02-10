@@ -1,0 +1,32 @@
+.slider {
+    position: relative;
+    height: 81vh;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 10s ease-in-out;
+}
+
+.right-arrow,
+.left-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.right-arrow {
+    right: 32px;
+}
+
+.left-arrow {
+    left: 32px;
+}

@@ -1,0 +1,18 @@
+.adv2 {
+    margin-top: 55px;
+    height: 60px;
+    font-family: arial;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: #1d2d50;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.adv2>p {
+    color: #eafaea;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
