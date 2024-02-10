@@ -4,7 +4,7 @@ import ImageSlider from './Slider'
 
 const Advertisement = () => {
     const containerStyles = {
-        width: "1520px",
+        width: "1500px",
         height: "580px",
         margin: "0 auto",
     };
